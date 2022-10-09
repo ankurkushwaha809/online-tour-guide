@@ -1,26 +1,83 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example Homepage</title>
+    <title>About Us</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css">
-
-    <link href="js/script.js">
+    <link href="../css/about.css" rel="stylesheet" type="text/css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
   </head>
-  <div class="header">
-    <a href="/" class="logo">CompanyLogo</a>
-    <div class="header-right">
-      <a class="active" href="/">Home</a>
-      <a href="/html/contact.html">Contact</a>
-      <a href="/html/about.html">About</a>
-      <a href="/html/india.html">India</a>
-      <a href="/html/london.html">London</a>
-      <a href="/html/paris.html">Paris</a>
-      <a href="/html/newyork.html">NewYork</a>
-   </div>
-  </div>
-    <h1>welcom to home page</h1>
+  <nav class="navbar navbar-expand-sm header">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/contact.html">Contact</a>
+          </li>
+          <li  class="nav-item">
+            <a class="nav-link" href="/html/india.html">India</a>
+          </li>
+          <li  class="nav-item">
+            <a class="nav-link" href="/html/london.html">London</a>
+          </li>
+          <li  class="nav-item">
+            <a class="nav-link" href="/html/paris.html">Paris</a>
+          </li>
+          <li  class="nav-item">
+            <a class="nav-link" href="/html/newyork.html">NewYork</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control  me-2" id="search-value" type="text" placeholder="Search" name="search">
+          <button id="search-item" class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+          <button id="clear-search" class="btn btn-danger" type="button"><i class="fa fa-close"></i></button>
 
+        </form>
+      </div>
+    </div>
+  </nav>
+    <h1>welcom to home page</h1>
+    <script>
+      $('#clear-search').hide()  
+        $('#search-item').on('click', function() {
+          const searchedText = $('#search-value').val();
+          var all = $(".tour-name").map(function() {
+            if (!this.innerText.toLowerCase().includes(searchedText.toLowerCase())){
+              $(this).closest('div').closest('div').hide()
+            }else{
+              $(this).closest('div').closest('div').show()
+            } 
+        }).get();
+        })
+
+        $('#search-item').on('click', function() {
+          $('#search-item').hide()
+          $('#clear-search').show()
+        })
+        $('#clear-search').on('click', function() {
+          $('#search-value').val('')
+          $('#search-item').show()
+          $('#clear-search').hide()   
+          var all = $(".tour-name").map(function() {
+            $(this).closest('div').closest('div').show()
+        }).get();    
+        })
+      </script>
 </body> 

@@ -6,6 +6,7 @@ img{
   div [class^="col-"]{
     padding-left:15px;
     padding-right:15px;
+    margin-bottom: 15px;
   }
   .mt-2 {
     margin: 25px;
@@ -16,7 +17,6 @@ img{
     cursor:pointer;
   }
   .card-title{  
-    font-size:15px;
     transition:1s;
     cursor:pointer;
   }
