@@ -12,14 +12,15 @@ body {
 }
 .header {
   overflow: hidden;
-  background-color: gold;
+  background-image: linear-gradient(to right bottom, #132546, #1a2243, #201e40, #251b3b, #291737, #221836, #1c1934, #161932, #081b2d, #061b26, #0c1a1e, #131818);
+  padding: 20px;;
   padding: 20px 10px;
   margin-bottom: 25px;
 }
 
 .header a {
   float: left;
-  color: black;
+  color: white;
   text-align: center;
   padding: 15px;
   text-decoration: none;
